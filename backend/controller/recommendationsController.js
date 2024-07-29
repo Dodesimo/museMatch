@@ -18,8 +18,11 @@ async function getToken() {
     return await response.json();
 }
 
-async function getTrackInfo(access_token) {
-    const response = await fetch("https://api.spotify.com/v1/tracks/4cOdK2wGLETKBW3PvgPWqT", {
+async function getTrackInfo(name, access_token) {
+
+    const query = `https://api.spotify.com/v1/search?q=${name}&type=track&limit=1`
+
+    const response = await fetch(query, {
         method: 'GET',
         headers: {'Authorization': 'Bearer ' + access_token},
     });
@@ -27,17 +30,37 @@ async function getTrackInfo(access_token) {
     return await response.json();
 }
 
-const getSimilar = async (req, res) => {
+async function getRecommendations(songID, access_token){
 
-    const name = req.params
+    const query = `https://api.spotify.com/v1/recommendations?limit=3&seed_tracks=${songID}&min_popularity=0&max_popularity=20`
 
-    const tracks = await getToken().then(response => {
-        getTrackInfo(response.access_token).then(profile => {
-            res.status(200).json(profile)
-        })
-    });
+    const response = await fetch(query, {
+
+        method: 'GET',
+        headers: {'Authorization': 'Bearer ' + access_token}
+
+
+    })
+
+    return await response.json();
 
 }
+
+const getSimilar = async (req, res) => {
+
+    const {name} = req.params
+    const accessToken = await getToken().then(response => response.access_token)
+
+    const similarTracks = await getTrackInfo(name,accessToken).then(profile =>
+            profile.tracks.items[0].id).then(profile => getRecommendations(profile,accessToken))
+
+    res.status(200).json(similarTracks)
+
+}
+
+//Todo:
+//Make helper get url from search app.
+//THen, recommendation system
 
 module.exports = {
 
