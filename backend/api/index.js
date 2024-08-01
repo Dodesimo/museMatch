@@ -1,6 +1,7 @@
 const express = require('express')
 const recommendationRoutes = require('./recommendations/recommendations')
 require('dotenv').config()
+const cors = require('cors')
 
 const app = express()
 app.use(express.json())
