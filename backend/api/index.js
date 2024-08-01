@@ -1,5 +1,5 @@
 const express = require('express')
-const recommendationRoutes = require('../recommendations/recommendations')
+const recommendationRoutes = require('./recommendations/recommendations')
 require('dotenv').config()
 const cors = require('cors')
 
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 })
 
-app.use('/lib/musematch', recommendationRoutes)
+app.use('/api/musematch', recommendationRoutes)
 
 //Routes
 app.get('/', (req, res) => {
