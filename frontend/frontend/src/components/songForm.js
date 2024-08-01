@@ -10,7 +10,7 @@ const SongForm = () => {
         e.preventDefault()
 
         const s = songs
-        const json = await (fetch(`https://muse-match.vercel.app/musescore/${s}`)).then(response => response.json()).then(rJson => rJson.tracks)
+        const json = await (fetch(`https://muse-match.vercel.app/musescore/api/${s}`)).then(response => response.json()).then(rJson => rJson.tracks)
         setRecs(json)
         console.log(json)
 
