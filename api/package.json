@@ -7,12 +7,12 @@
     "nodemon": "^3.1.4",
     "spotify-web-api-node": "^5.0.2"
   },
-  "name": "backend",
+  "name": "api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node_modules/.bin/nodemon api/index.js"
+    "dev": "node_modules/.bin/nodemon index.js"
   },
   "keywords": [],
   "author": "",
