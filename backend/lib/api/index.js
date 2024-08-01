@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 })
 
-app.use('/lib/musescore', recommendationRoutes)
+app.use('/lib/musematch', recommendationRoutes)
 
 //Routes
 app.get('/', (req, res) => {
