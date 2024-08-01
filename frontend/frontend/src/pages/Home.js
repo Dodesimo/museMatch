@@ -1,3 +1,5 @@
+import SongForm from "../components/songForm"
+
 const Home = () => {
 
     return (
@@ -6,17 +8,8 @@ const Home = () => {
 
 
             <h1 className="introText">What song do you want recommendations for? </h1>
-
-
-            <div className="search-box">
-
-                <form>
-
-                    <input type="text" className="search"></input>
-
-                </form>
-
-            </div>
+            <p className="content">Hit enter when done.</p>
+            <SongForm></SongForm>
 
         </div>
     )

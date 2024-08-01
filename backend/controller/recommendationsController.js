@@ -32,7 +32,7 @@ async function getTrackInfo(name, access_token) {
 
 async function getRecommendations(songID, access_token){
 
-    const query = `https://api.spotify.com/v1/recommendations?limit=3&seed_tracks=${songID}&min_popularity=0&max_popularity=20`
+    const query = `https://api.spotify.com/v1/recommendations?limit=3&seed_tracks=${songID}&min_popularity=30&max_popularity=70`
 
     const response = await fetch(query, {
 

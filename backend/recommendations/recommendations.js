@@ -1,7 +1,7 @@
 const express = require("express")
 const {
 
-    getSimilar, getTInfo
+    getSimilar
 
 } = require('../controller/recommendationsController')
 
