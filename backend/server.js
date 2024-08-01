@@ -5,6 +5,14 @@ require('dotenv').config()
 const app = express()
 app.use(express.json())
 
+app.use(cors(
+    {
+        origin: ["https://muse-match.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 
 app.use((req, res, next) => {
 

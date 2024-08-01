@@ -88,6 +88,8 @@ input {
 
     display: flex;
     margin-top: 50px;
+    border-style: solid;
+    padding: 25px
 
 
 }
@@ -99,3 +101,10 @@ input {
 
 
 }
+
+img.resize {
+    width:50%; /* you can use % */
+    height: auto;
+}
+
+
