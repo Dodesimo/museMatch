@@ -1,5 +1,5 @@
 const express = require('express')
-const recommendationRoutes = require('./api/recommendations/recommendations')
+const recommendationRoutes = require('./recommendations/recommendations')
 require('dotenv').config()
 const cors = require('cors')
 
