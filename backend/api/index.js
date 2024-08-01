@@ -8,7 +8,7 @@ app.use(express.json())
 
 app.use(cors(
     {
-        origin: ["https://muse-match.vercel.app"],
+        origin: ["https://muse-match.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
