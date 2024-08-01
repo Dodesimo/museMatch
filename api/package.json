@@ -9,10 +9,10 @@
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "api/node_modules/.bin/nodemon api/index.js"
+    "dev": "node_modules/.bin/nodemon api/index.js"
   },
   "keywords": [],
   "author": "",
